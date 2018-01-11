@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import android.widget.Toast;
 import java.util.HashMap;
 import java.util.List;
 
@@ -34,9 +35,16 @@ public class ColorAdapter extends RecyclerView.Adapter<ColorAdapter.ColorViewHol
     }
 
     @Override
-    public void onBindViewHolder(ColorViewHolder holder, int position) {
-        String color = colorNames.get(position);
+    public void onBindViewHolder(final ColorViewHolder holder, int position) {
+        final String color = colorNames.get(position);
+        final String colorDex = colorDict.get(color);
         holder.name.setText(color);
+        holder.name.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(holder.name.getContext(), color + " has a HEX value of " + colorDex, Toast.LENGTH_LONG).show();
+            }
+        });
         try {
             holder.name.setTextColor(Color.parseColor(getColor(color)));
         } catch (Exception e) { // default to black if color is not available or invalid hex.
