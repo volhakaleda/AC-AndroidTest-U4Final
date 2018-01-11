@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-  android:orientation="vertical">
+    android:layout_height="match_parent">
 
     <TextView
         android:layout_width="match_parent"
@@ -14,22 +13,14 @@
             1. Add a "More" button to this fragment. When the button is clicked,
             display the more_textView commented out below and hide the button
             2. Update the layout orientation to ensure text views and button are all visible.
-                    -->
-
-
-    <Button
-      android:id="@+id/more"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="More"
-      />
 
     <TextView
         android:id="@+id/more_textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="@string/more_info"
-      android:visibility="gone"/>
+        android:text="@string/more_info"/>
+
+        -->
 
 </LinearLayout>

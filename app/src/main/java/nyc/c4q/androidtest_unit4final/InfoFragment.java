@@ -15,16 +15,11 @@ import android.widget.TextView;
 
 public class InfoFragment extends Fragment {
 
-    Button moreB;
-    TextView tv;
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         View v = inflater.inflate(R.layout.info_fragment, container, false);
-        moreB  =v.findViewById(R.id.more);
-        tv = v.findViewById(R.id.more_textView);
         return v;
     }
 
@@ -32,12 +27,5 @@ public class InfoFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        moreB.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                tv.setVisibility(View.VISIBLE);
-                moreB.setVisibility(View.GONE);
-            }
-        });
     }
 }
